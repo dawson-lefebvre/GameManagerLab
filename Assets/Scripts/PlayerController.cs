@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,6 +30,11 @@ public class PlayerController : MonoBehaviour
     Vector2 moveValue;
     bool isMovingOnY = false;
     bool canMove = true;
+    bool isLeft;
+
+    public bool isTransitioning;
+    public int transitionValue = 1;
+    [SerializeField] Image transitionImage;
     // Update is called once per frame
     void Update()
     {
@@ -58,7 +64,6 @@ public class PlayerController : MonoBehaviour
             }
 
             moveValue.Normalize();
-            Debug.Log(moveValue);
 
             animator.SetInteger("xSpeed", (int)moveValue.x);
             animator.SetInteger("ySpeed", (int)moveValue.y);
@@ -81,19 +86,40 @@ public class PlayerController : MonoBehaviour
             //Check for attack
             if (Input.GetMouseButtonDown(0))
             {
+                isLeft = spriteRenderer.flipX;
+                if(isLeft)
+                {
+                    spriteRenderer.flipX = false;
+                }
+                animator.SetBool("isLeft", isLeft);
                 animator.SetTrigger("Attack");
                 canMove = false;
             }
 
         }
+
+        if(isTransitioning)
+        {
+            transitionImage.fillAmount += Time.deltaTime * transitionValue;
+            if(transitionImage.fillAmount >= 1)
+            {
+                isTransitioning = false;
+            }
+            else if (transitionImage.fillAmount <= 0)
+            {
+                isTransitioning = false;
+                canMove = true;
+            }
+        }
     }
 
     private void LateUpdate()
     {
-        if (!canMove)
+        if (!canMove && !isTransitioning)
         {
             if (!animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
             {
+                spriteRenderer.flipX = isLeft;
                 canMove = true;
             }
         }
@@ -106,5 +132,25 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(moveValue * moveSpeed * Time.fixedDeltaTime);
         }
+    }
+
+    public void StartTransition()
+    {
+        canMove = false;
+        moveValue = Vector2.zero;
+        animator.SetInteger("xSpeed", (int)moveValue.x);
+        animator.SetInteger("ySpeed", (int)moveValue.y);
+        isTransitioning = true;
+        transitionValue = 1;
+    }
+
+    public void EndTransition()
+    {
+        canMove = false;
+        moveValue = Vector2.zero;
+        animator.SetInteger("xSpeed", (int)moveValue.x);
+        animator.SetInteger("ySpeed", (int)moveValue.y);
+        isTransitioning = true;
+        transitionValue = -1;
     }
 }

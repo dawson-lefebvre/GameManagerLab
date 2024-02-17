@@ -656,7 +656,7 @@ TextureImporter:
         serializedVersion: 2
         x: 106
         y: 68
-        width: 19
+        width: 36
         height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -672,34 +672,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knight1_Attack_29
-      rect:
-        serializedVersion: 2
-        x: 113
-        y: 69
-        width: 20
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3689c79677f1494b80693b71018bdb0
-      internalID: 365489330
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Knight1_Attack_30
       rect:
         serializedVersion: 2
         x: 165
         y: 69
         width: 20
-        height: 18
+        height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
