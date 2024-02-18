@@ -20,11 +20,12 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;
     SpriteRenderer spriteRenderer;
-
+    PlayerInfo playerInfo;
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        playerInfo = GetComponent<PlayerInfo>();
     }
 
     Vector2 moveValue;
@@ -163,7 +164,7 @@ public class PlayerController : MonoBehaviour
         if(collision.tag == "SlimeHitBox")
         {
             health--;
-            Debug.Log($"Hit! Health is now: {health}");
+            playerInfo.DamagePlayer(1);
         }
     }
 }

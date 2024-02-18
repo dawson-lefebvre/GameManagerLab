@@ -9184,6 +9184,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1154044011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1154044012}
+  m_Layer: 0
+  m_Name: WestSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1154044012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154044011}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.08, y: -0.03, z: 0.23119116}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1245056722
 GameObject:
   m_ObjectHideFlags: 0
@@ -9256,6 +9287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75a33e01954e56439d7e55988bd992c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: 
 --- !u!50 &1245056727
 Rigidbody2D:
   serializedVersion: 4
@@ -9277,6 +9309,54 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1277788489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1277788491}
+  - component: {fileID: 1277788490}
+  m_Layer: 0
+  m_Name: Initializer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1277788490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277788489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b234b3174c1511d4d8630f9ef278b7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  westSpawn: {fileID: 1154044012}
+  northSpawm: {fileID: 0}
+  eastSpawn: {fileID: 0}
+  southSpawm: {fileID: 0}
+--- !u!4 &1277788491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277788489}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.1822968, y: -0.6033251, z: 1.089021}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1341965405
 GameObject:
   m_ObjectHideFlags: 0
@@ -9349,6 +9429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75a33e01954e56439d7e55988bd992c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: 
 --- !u!50 &1341965410
 Rigidbody2D:
   serializedVersion: 4
@@ -9442,6 +9523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75a33e01954e56439d7e55988bd992c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: 
 --- !u!50 &1372122441
 Rigidbody2D:
   serializedVersion: 4
@@ -9516,7 +9598,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703099009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.394, y: 0.1095, z: 0}
+  m_LocalPosition: {x: -8.884, y: 0.1095, z: 0}
   m_LocalScale: {x: 1, y: 10.463104, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9535,6 +9617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75a33e01954e56439d7e55988bd992c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: WestTown
 --- !u!50 &1703099013
 Rigidbody2D:
   serializedVersion: 4
