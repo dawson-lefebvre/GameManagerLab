@@ -432,5 +432,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6971129491811479850, guid: 2de6818053b67a2459fb3e58161d30ba, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971129491811479850, guid: 2de6818053b67a2459fb3e58161d30ba, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971129491811479850, guid: 2de6818053b67a2459fb3e58161d30ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971129491811479850, guid: 2de6818053b67a2459fb3e58161d30ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0705
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385777024049562148, guid: 2de6818053b67a2459fb3e58161d30ba, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2de6818053b67a2459fb3e58161d30ba, type: 3}

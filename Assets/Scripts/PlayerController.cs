@@ -35,6 +35,10 @@ public class PlayerController : MonoBehaviour
     public bool isTransitioning;
     public int transitionValue = 1;
     [SerializeField] Image transitionImage;
+
+
+    int health = 6;
+
     // Update is called once per frame
     void Update()
     {
@@ -152,5 +156,14 @@ public class PlayerController : MonoBehaviour
         animator.SetInteger("ySpeed", (int)moveValue.y);
         isTransitioning = true;
         transitionValue = -1;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "SlimeHitBox")
+        {
+            health--;
+            Debug.Log($"Hit! Health is now: {health}");
+        }
     }
 }
