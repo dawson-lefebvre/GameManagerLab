@@ -27,7 +27,7 @@ public class OverworldInitializer : MonoBehaviour
         }
 
     }
-    [SerializeField] Transform westSpawn, northSpawm, eastSpawn, southSpawm;
+    [SerializeField] Transform westSpawn, northSpawn, eastSpawn, southSpawn;
     private void Start()
     {
         if (!playerLoaded)
@@ -48,6 +48,27 @@ public class OverworldInitializer : MonoBehaviour
                         player.transform.position = westSpawn.position;
                         player.EndTransition();
                         SceneManager.UnloadSceneAsync("WestTown");
+                    }
+                    else if (s.name == "EastTown")
+                    {
+                        PlayerController player = FindObjectOfType<PlayerController>();
+                        player.transform.position = eastSpawn.position;
+                        player.EndTransition();
+                        SceneManager.UnloadSceneAsync("EastTown");
+                    }
+                    else if (s.name == "SouthTown")
+                    {
+                        PlayerController player = FindObjectOfType<PlayerController>();
+                        player.transform.position = southSpawn.position;
+                        player.EndTransition();
+                        SceneManager.UnloadSceneAsync("SouthTown");
+                    }
+                    else if (s.name == "NorthTown")
+                    {
+                        PlayerController player = FindObjectOfType<PlayerController>();
+                        player.transform.position = northSpawn.position;
+                        player.EndTransition();
+                        SceneManager.UnloadSceneAsync("NorthTown");
                     }
                 }
             }

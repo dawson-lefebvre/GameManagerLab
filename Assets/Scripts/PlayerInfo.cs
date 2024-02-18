@@ -7,27 +7,40 @@ public class PlayerInfo : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI healthUI, treasureUI;
 
-    int treasure = 0;
-    int health = 5;
+    PlayerData playerData;
 
     private void Start()
     {
-        healthUI.text = health.ToString();
-        treasureUI.text = treasure.ToString();
+        playerData = SaveLoadManager.LoadPlayerData("SaveData/PlayerData.xml");
+        if(playerData == null)
+        {
+            playerData = new PlayerData();
+            playerData.health = 5;
+        }
+        healthUI.text = playerData.health.ToString();
+        treasureUI.text = playerData.treasure.ToString();
     }
     public void UpdateTreasureValue(int value)
     {
-        treasure += value;
-        treasureUI.text = treasure.ToString();
+        playerData.treasure += value;
+        treasureUI.text = playerData.treasure.ToString();
     }
 
     public void DamagePlayer(int value)
     {
-        health -= value;
-        healthUI.text = health.ToString();
-        if(health <= 0)
-        {
-            //GameOver
-        }
+        playerData.health -= value;
+        healthUI.text = playerData.health.ToString();
+    }
+
+    public void SetHealth(int value)
+    {
+        playerData.health = value;
+        healthUI.text = playerData.health.ToString();
+    }
+
+
+    public void SavePlayer()
+    {
+        SaveLoadManager.SavePlayerData(playerData, $"SaveData/PlayerData.xml");
     }
 }

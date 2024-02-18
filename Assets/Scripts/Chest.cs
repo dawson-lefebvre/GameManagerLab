@@ -9,6 +9,7 @@ public class Chest : MonoBehaviour
         if(collision.tag == "Player")
         {
             FindObjectOfType<PlayerInfo>().UpdateTreasureValue(1);
+            FindObjectOfType<TownManager>().CollectTreasure();
             Destroy(gameObject);
         }
     }
